@@ -23,3 +23,18 @@ soup=bs(r.content, features="lxml")
 for val in soup.findAll("script"):
     if(re.search("props",str(val))) is not None:
         result=str(val)
+
+urlMp4=re.search("(?P<url>https?://[^\s]+)(mp4)",result).group("url")+"mp4"
+print("----------------------")
+
+print("saving video as:{}".format(urlMp4))
+
+fileName=urlMp4.split("/")[len(urlMp4.split("/"))-1].split("?")[0]
+
+r=req.get(urlMp4)
+print("storing video in {}".format(fileName))
+
+with open(fileName,'wb') as file:
+    file.write (r.content)
+
+print("download finished")
