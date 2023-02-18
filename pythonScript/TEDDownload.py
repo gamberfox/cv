@@ -1,12 +1,12 @@
-###february 16 2023
-###developed in windows 10
+###february 17 2023
+###developed in windows 10, also works in linux
 #this script is used to download a video to the current directory
 #from the tedTalk website using a url
-###python TEDDownload.py (insert url here)
+#######python TEDDownload.py (insert url here)
 
-
-from bs4 import BeautifulSoup as bs#I use aliases to save time typing
-import requests as req
+#pip install lxml
+from bs4 import BeautifulSoup as bs#pip install beautifulsoup4
+import requests as req#pip install requests
 import re
 import sys
 
